@@ -18,6 +18,8 @@ public class StreamPractice {
         a.add("ABhinav5");
         a.add("ABhinav6");
 
+//        System.out.println(a.stream().filter(s-> s.startsWith("A")).count());
+
 //        a.stream().forEach(s-> System.out.println(s));
 
 //        a.stream().map(s->s.substring(0,1)+s.substring(1, s.length()).toUpperCase()).forEach(s-> System.out.println(s));
