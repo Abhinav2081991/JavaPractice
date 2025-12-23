@@ -1,5 +1,7 @@
 package StringPracticePackage;
 
+import java.util.Arrays;
+
 public class FirstLetterCapital {
 
     public static void main(String[] args) {
@@ -11,7 +13,10 @@ public class FirstLetterCapital {
             output = output + " " +s.substring(0,1).toUpperCase() + s.substring(1,s.length());
 
         }
-        System.out.println(output);
+        System.out.println("Output = "+ output);
+
+        // Using Java Streams
+        Arrays.asList(strArray).stream().map(s -> s.substring(0,1).toUpperCase()+s.substring(1,s.length()).toLowerCase()).forEach(s -> System.out.println(s));
     }
 
 }

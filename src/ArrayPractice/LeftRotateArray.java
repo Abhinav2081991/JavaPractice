@@ -14,7 +14,6 @@ public class LeftRotateArray {
         System.out.println(Arrays.toString(arr));
     }
 
-
     /**
      * This will reverse the array
      */
@@ -24,17 +23,13 @@ public class LeftRotateArray {
             int temp = arr[start];
             arr[start] = arr[end];
             arr[end] = temp;
-
             start++;
             end --;
-
         }
-
     }
 
-
     /**
-     * Methid to left rotate an array k times.
+     * Method to left rotate an array k times.
      * @param arr
      * @param k
      */
@@ -53,16 +48,10 @@ public class LeftRotateArray {
         //reverse the first part 0 to k-1
         reverseArrary(arr, 0, k-1);
 
-
         //reverse the second part k to n-1
         reverseArrary(arr, k, n-1);
 
         //reverse the entire array 0 to n-1
         reverseArrary(arr, 0, n-1);
-
-
-
     }
-
-
 }

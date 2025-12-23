@@ -19,7 +19,6 @@ public class Replacepractice {
         char[] ch = new char[10];
         a.getChars(1, 3, ch, 0);
 
-
         System.out.println(ch);
     }
 }

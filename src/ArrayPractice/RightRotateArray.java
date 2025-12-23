@@ -29,12 +29,9 @@ public class RightRotateArray {
             int temp = arr[start];
             arr[start] = arr[end];
             arr[end] = temp;
-
             start++;
             end --;
-
         }
-
     }
 
 
@@ -54,12 +51,10 @@ public class RightRotateArray {
         if(k==0){  // If K =0 then no rotation needed
             return;
         }
-
-        //reverse the first part 0 to k-1
+        //reverse the first part 0 to n-k-1
         reverseArrary(arr, 0, n-k-1);
 
-
-        //reverse the second part k to n-1
+        //reverse the second part n-k to n-1
         reverseArrary(arr, n-k, n-1);
 
         //reverse the entire array 0 to n-1

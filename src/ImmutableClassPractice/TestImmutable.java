@@ -9,6 +9,8 @@ public class TestImmutable {
 
         System.out.println(ic.getNumber());
 
+        System.out.println(ic.getNumber() + 1);
+
 
         ImmutableClass ic1 = new ImmutableClass(11);
 

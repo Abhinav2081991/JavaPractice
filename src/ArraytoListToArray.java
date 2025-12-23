@@ -13,7 +13,7 @@ public class ArraytoListToArray {
         listArray.add("ABhinav3");
 
 
-
+        int atr[] = {1,2,3,3};
         String[] strArray = listArray.toArray(new String[0]);
 
         for(String s: strArray) {

@@ -16,7 +16,6 @@ public class EnumPractice {
 
         System.out.println(enumSet);
 
-
             EnumMap<Days,String> enumMap = new EnumMap<Days, String>(Days.class);
             enumMap.put(Days.Saturday, "Weekend1");
             enumMap.put(Days.Friday, "Weekend0");

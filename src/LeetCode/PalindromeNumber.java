@@ -3,7 +3,7 @@ package LeetCode;
 public class PalindromeNumber {
 
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
 
         int input = 121;
         String inputString = String.valueOf(input);

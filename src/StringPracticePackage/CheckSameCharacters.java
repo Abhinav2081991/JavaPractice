@@ -1,6 +1,7 @@
 package StringPracticePackage;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -27,15 +28,11 @@ public class CheckSameCharacters {
 
         System.out.println(set1);
         System.out.println(set2);
-
+        System.out.println(set1.equals(set2));
 
 //            String car , bus = "petrol";
 //            car = car + bus; // compilation error
 //            System.out.println(car);
-
-
-
-
 
 
     }

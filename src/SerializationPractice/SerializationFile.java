@@ -30,7 +30,7 @@ public class SerializationFile implements Serializable {
     }
 
 
-    // File to code.
+    // File to code. Deserialize
     public static Object deserialize(String fileName) throws IOException, ClassNotFoundException {
         FileInputStream file = new FileInputStream(fileName);
         ObjectInputStream objectStream = new ObjectInputStream(file);

@@ -15,7 +15,6 @@ public class MaxSubstring {
         List<Character> list = new ArrayList<Character>();
 
         while(end<s.length()){
-
             if(!list.contains(s.charAt(end))){
                 list.add(s.charAt(end));
                 end++;
@@ -26,8 +25,6 @@ public class MaxSubstring {
                 start++;
             }
         }
-
         System.out.println(max_length);
-
     }
 }
