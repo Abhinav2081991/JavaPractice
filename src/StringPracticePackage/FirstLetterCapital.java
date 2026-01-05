@@ -16,7 +16,7 @@ public class FirstLetterCapital {
         System.out.println("Output = "+ output);
 
         // Using Java Streams
-        Arrays.asList(strArray).stream().map(s -> s.substring(0,1).toUpperCase()+s.substring(1,s.length()).toLowerCase()).forEach(s -> System.out.println(s));
+        Arrays.asList(strArray).stream().map(s -> s.substring(0,1).toUpperCase()+s.substring(1,s.length()).toLowerCase()).forEach(s -> System.out.print(s + " "));
     }
 
 }

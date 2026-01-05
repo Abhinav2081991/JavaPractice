@@ -14,6 +14,11 @@ public class CustomException extends Exception{
         super(message,cause);
     }
 
+    public boolean testException(String message){
+        System.out.println("Test custom exception message." + message);
+        return false;
+    }
+
 
 
 

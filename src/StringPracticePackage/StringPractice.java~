@@ -12,8 +12,6 @@ public class StringPractice {
         System.out.println(checkAnagram("aman is","anam is"));
         checkCharacters("ABHINAV 12HS 22Ja TIARI!@#$");
         checkDuplicates("opop");
-
-        System.out.println(String.join("~","Abhinav", "Tiwari"));
     }
 
     /**

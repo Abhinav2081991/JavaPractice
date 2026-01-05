@@ -9,7 +9,6 @@ public class FibonacciSeries {
         int b = 1;
         int c = 1;
 
-
         for(int i = 1; i< 10; i++){
 
             System.out.println(a + " ");

@@ -10,7 +10,8 @@ public class TestClassForException {
                 throw new CustomException("Custom Exception");
             }
         }catch (CustomException e){
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage()+ "test");
+            System.out.println(e.testException("hellp"));
         }
 
     }
