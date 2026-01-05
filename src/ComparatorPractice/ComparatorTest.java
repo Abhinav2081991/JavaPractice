@@ -24,11 +24,8 @@ public class ComparatorTest {
         for(Student1 a: list){
             System.out.println(a.age +" "+ a.id +" "+ a.name);
         }
-
-
-
+        
         Collections.sort(list, new AgeComparator());
-
         for(Student1 a: list){
             System.out.println(a.age +" "+ a.id +" "+ a.name);
         }
@@ -38,7 +35,6 @@ public class ComparatorTest {
         for(Student1 a: list){
             System.out.println(a.age +" "+ a.id +" "+ a.name);
         }
-
     }
 
 

@@ -15,7 +15,7 @@ public class HashMapPractice {
 //
 //        System.out.println(map);
 //
-//        for(Map.Entry m : map.entrySet()){
+//      for(Map.Entry m : map.entrySet()){
 //            System.out.println(m.getKey()+"--"+m.getValue());
 //        }
 //    String a = "";
@@ -26,7 +26,7 @@ public class HashMapPractice {
 //        }
 //        System.out.println(a);
 
-        freqOfChars("ldskjslkdjalsjdlka");
+        freqOfChars("ldskjsl kdja lsj dlka");
 
 
     }
@@ -45,7 +45,7 @@ public class HashMapPractice {
         }
         System.out.println(map);
         for(Map.Entry m : map.entrySet()){
-            System.out.println("Count of Charactets " + m.getKey() + "is -" + m.getValue());
+            System.out.println("Count of Characters " + m.getKey() + " is - " + m.getValue());
         }
     }
 

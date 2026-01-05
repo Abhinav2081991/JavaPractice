@@ -7,10 +7,10 @@ public class Intpractice {
 
         int num = 123456789;
         String str = Integer.toString(num);
-
+        String num1 = String.valueOf(num);
         for(int i=0; i<str.length(); i++){
 
-            Character.getNumericValue(str.charAt(i));
+            System.out.println(Character.getNumericValue(str.charAt(i)));
 
         }
 
