@@ -26,10 +26,8 @@ public class JDBCConnection {
 
 
         while(rs.next()){
-
             rs.getString(0);
 //            rs.getInt();
-
         }
 
 

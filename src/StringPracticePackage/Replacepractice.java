@@ -13,6 +13,7 @@ public class Replacepractice {
 
         System.out.println(c);
 
+
         a = a.replace('A', 'm');
         System.out.println(a);
 

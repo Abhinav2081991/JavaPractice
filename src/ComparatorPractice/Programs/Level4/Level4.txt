@@ -1,0 +1,189 @@
+🔴 15️⃣ Sort Test Cases by Priority → Creation Time
+🔍 Problem Understanding
+
+Priority order is business-defined, not alphabetical
+HIGH > MEDIUM > LOW
+
+If priority is same → older test cases first
+
+🔹 Enum (Best Practice)
+enum Priority {
+    HIGH, MEDIUM, LOW
+}
+
+🔹 TestCase Model
+class TestCase {
+    private Priority priority;
+    private LocalDateTime createdTime;
+
+    // getters
+}
+
+🔹 Comparator Implementation
+Comparator<TestCase> comparator =
+    Comparator.comparingInt(tc -> tc.getPriority().ordinal())
+              .thenComparing(TestCase::getCreatedTime);
+
+testCases.sort(comparator);
+
+🎤 Interview Explanation
+
+“Since priority has a predefined order, I used enum ordinal values to define sorting order and chained it with creation time using thenComparing.”
+
+🔴 16️⃣ Sort Logs by Severity → Timestamp
+🔍 Problem Understanding
+
+Severity ranking:
+ERROR > WARN > INFO
+
+For same severity → earlier logs first
+
+🔹 Enum Definition
+enum Severity {
+    ERROR, WARN, INFO
+}
+
+🔹 Log Model
+class Log {
+    private Severity severity;
+    private LocalDateTime timestamp;
+
+    // getters
+}
+
+🔹 Comparator
+Comparator<Log> logComparator =
+    Comparator.comparingInt(log -> log.getSeverity().ordinal())
+              .thenComparing(Log::getTimestamp);
+
+logs.sort(logComparator);
+
+🎤 Interview Explanation
+
+“Enums give a natural priority ordering, and ordinal comparison avoids complex if-else logic.”
+
+🔴 17️⃣ Managers First, Then Developers, Alphabetical
+🔍 Problem Understanding
+
+Role-based sorting
+
+Manager is higher priority
+
+Name sorting within role
+
+🔹 Employee Model
+class Employee {
+    private String role;
+    private String name;
+}
+
+🔹 Comparator Logic
+employees.sort(
+    Comparator.comparing((Employee e) -> !e.getRole().equals("Manager"))
+              .thenComparing(Employee::getName)
+);
+
+🧠 Key Insight
+
+false sorts before true
+
+Managers return false, Developers return true
+
+🎤 Interview Explanation
+
+“I used boolean comparison to prioritize managers without hard-coding multiple if conditions.”
+
+🔴 18️⃣ Sort Files by Extension → Size → Name
+🔍 Problem Understanding
+
+Files grouped by extension
+
+Smaller files first
+
+Alphabetical file names last
+
+🔹 File Model
+class FileInfo {
+    private String extension;
+    private long size;
+    private String name;
+}
+
+🔹 Comparator
+files.sort(
+    Comparator.comparing(FileInfo::getExtension)
+              .thenComparingLong(FileInfo::getSize)
+              .thenComparing(FileInfo::getName)
+);
+
+🎤 Interview Explanation
+
+“Multi-level sorting is achieved cleanly using comparator chaining instead of nested conditions.”
+
+🔴 19️⃣ Sort Version Numbers Correctly
+🔍 Problem Understanding
+
+Lexicographic sorting fails:
+
+1.2.10 ❌ < 1.2.2
+
+🔹 Correct Approach
+
+Split version string
+
+Compare numeric parts one by one
+
+🔹 Comparator Code
+versions.sort((v1, v2) -> {
+    String[] a1 = v1.split("\\.");
+    String[] a2 = v2.split("\\.");
+
+    int max = Math.max(a1.length, a2.length);
+
+    for (int i = 0; i < max; i++) {
+        int n1 = i < a1.length ? Integer.parseInt(a1[i]) : 0;
+        int n2 = i < a2.length ? Integer.parseInt(a2[i]) : 0;
+
+        if (n1 != n2) {
+            return Integer.compare(n1, n2);
+        }
+    }
+    return 0;
+});
+
+🎤 Interview Explanation
+
+“Each version segment is compared numerically instead of as a string to ensure correct ordering.”
+
+🔴 20️⃣ Top 3 Highest Paid Employees (Streams + Comparator)
+🔍 Problem Understanding
+
+Sort descending by salary
+
+Return top 3
+
+🔹 Solution
+List<Employee> top3 =
+    employees.stream()
+             .sorted(Comparator.comparing(Employee::getSalary).reversed())
+             .limit(3)
+             .toList();
+
+🧠 Alternative (More Efficient for Large Lists)
+List<Employee> top3 =
+    employees.stream()
+             .collect(Collectors.collectingAndThen(
+                 Collectors.toList(),
+                 list -> list.stream()
+                             .sorted(Comparator.comparing(Employee::getSalary).reversed())
+                             .limit(3)
+                             .toList()
+             ));
+
+🎤 Interview Explanation
+
+“Streams allow clean transformation pipelines, and comparator reversal ensures descending order.”
+
+🏆 Final Interview Tip (VERY IMPORTANT)
+
+Enums + Comparator chaining = cleanest real-world sorting solution

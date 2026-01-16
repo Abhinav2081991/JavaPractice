@@ -25,7 +25,6 @@ public abstract class AbstractClassPractice {
 
 class AbstractClassUSage extends AbstractClassPractice{
 
-
     public void test() {
         AbstractClassPractice.testStaticConcreteMethod();
         System.out.println(testInstanceVariable);

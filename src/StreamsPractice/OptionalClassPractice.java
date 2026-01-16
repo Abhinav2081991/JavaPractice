@@ -32,5 +32,24 @@ public class OptionalClassPractice {
         Optional o1= Optional.of(str[5]);
         Optional check = o1.filter(s1->s1.equals("test"));
 
+
+//        In Selenium
+//
+//        String browser = Optional.ofNullable(System.getProperty("browser"))
+//                .orElse("chrome");
+
+
+//        Optional<WebElement> findElement(By by){
+//
+//            try{
+//                return Optional.of(driver.findElement (By locatr))
+//            } catch (Exception e) {
+//
+//                Optional.empty();
+//            }
+//        }
+//
+//        findElement(loctorx).ifPresent(WebElement :: click)
+
     }
 }

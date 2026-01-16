@@ -2,7 +2,6 @@ package ImmutableClassPractice;
 
 public final class ImmutableClass {
 
-
     // Instance Variable is Set as final
     final int number;
 

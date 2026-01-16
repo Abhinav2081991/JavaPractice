@@ -9,6 +9,8 @@ public abstract class TestAbstract {
         System.out.println("Abstract class called: " + test);
     }
 
+    public abstract void testMethod();
+
 }
 
 class ConcreteClass extends TestAbstract{
@@ -18,9 +20,15 @@ class ConcreteClass extends TestAbstract{
         super(test);
     }
 
+    @Override
+    public void testMethod() {
+        System.out.println("Abstract Method Implemented");
+    }
+
     public static void main(String[] args) {
 
         TestAbstract a = new ConcreteClass("Abhinav");
         System.out.println(a.toString());
+        a.testMethod();
     }
 }

@@ -11,7 +11,6 @@ public class FirstLetterCapital {
         String output = "";
         for(String s: strArray){
             output = output + " " +s.substring(0,1).toUpperCase() + s.substring(1,s.length());
-
         }
         System.out.println("Output = "+ output);
 

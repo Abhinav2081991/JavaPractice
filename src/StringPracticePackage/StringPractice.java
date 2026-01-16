@@ -8,6 +8,9 @@ import java.util.Set;
 public class StringPractice {
 
     public static void main(String[] args){
+
+        reverseToggle1("Abhinav Tiwari is a Good Programmer");
+
         System.out.println(reverseToggle("Abhinav Tiwari is a Good Programmer"));
         System.out.println(checkAnagram("aman is","anam is"));
         checkCharacters("ABHINAV 12HS 22Ja TIARI!@#$");
@@ -118,6 +121,37 @@ public class StringPractice {
                 System.out.println("Ch "+ c +" is " + hm.get(c));
             }
         }
+    }
+
+
+    public static void reverseToggle1(String input){
+        //Abhinav Tiwari is a Good Programmer
+        String outputToggle = "";
+        String output = "";
+        StringBuilder sb = new StringBuilder(output);
+         char[] ch = input.toCharArray();
+         for(char c: ch){
+             if(Character.isUpperCase((c))){
+                 c= Character.toLowerCase(c);
+             }
+             else if (Character.isLowerCase(c)){
+                 c= Character.toUpperCase(c);
+             }
+             sb.append(c);
+         }
+
+         outputToggle = sb.toString();
+        System.out.println(outputToggle);
+
+         String[] str = outputToggle.split(" ");
+
+         for(String s : str){
+             StringBuilder  sb1 = new StringBuilder(s);
+             output = output + " " + sb1.reverse();
+         }
+        System.out.println(output);
+
+
     }
 
 }
