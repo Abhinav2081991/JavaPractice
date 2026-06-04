@@ -1,7 +1,9 @@
 package CollectionPrograms;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 public class ReverseLinkedList {
 
@@ -32,5 +34,7 @@ public class ReverseLinkedList {
 
         System.out.println(list);
 
+        System.out.println(list.peekFirst());
+        Map<String, String> m =  new HashMap<>();
     }
 }

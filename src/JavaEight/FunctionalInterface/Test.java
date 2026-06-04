@@ -1,4 +1,4 @@
-package FunctionalInterfacePractice;
+package JavaEight.FunctionalInterface;
 
 public class Test {
 

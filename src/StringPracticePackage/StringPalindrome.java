@@ -11,6 +11,11 @@ public class StringPalindrome {
     public static void main(String[] args) {
 
         String str = "PARAP";
+        StringBuilder sb = new StringBuilder(str);
+
+        System.out.println(sb.reverse() +  "asdasdas");
+
+        System.out.println(str.equals(sb.reverse().toString()));
         String[] strArray =  str.split("");
         String output = "";
 

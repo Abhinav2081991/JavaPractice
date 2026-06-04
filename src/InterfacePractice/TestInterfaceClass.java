@@ -2,6 +2,7 @@ package InterfacePractice;
 
 public class TestInterfaceClass implements TestInterface{
 
+    @Override
     public void test() {
         System.out.println("implementation of interface method");
     }

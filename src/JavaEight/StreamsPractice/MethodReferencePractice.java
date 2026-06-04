@@ -1,5 +1,8 @@
-package StreamsPractice;
+package JavaEight.StreamsPractice;
 
+
+import java.util.Arrays;
+import java.util.List;
 
 interface TestInterface{
     void testInterfaceAbstractMethod();
@@ -42,6 +45,34 @@ public class MethodReferencePractice {
         MethodReferencePractice p  = new MethodReferencePractice();
         TestInterface ti2 = p::instanceMethod;
         ti2.testInterfaceAbstractMethod();
+
+/*
+*****************IMPORTANT EXAMPLES BELOW*******************************
+ */
+
+        List<String> list = Arrays.asList("Abhinav", "Bobbbbb", "Robert");
+        list.forEach(x -> System.out.println(x.substring(0,4)));
+
+
+        // Now I can use Method Reference instead of Lambda expression
+        // It can be done using then Static method reference.
+
+        list.forEach(MethodReferencePractice::print);
+        // This will use the print method in the list for each element.
+
+        //For non Static method reference.Create an object of a class first and use it instead of Lambda expression.
+        MethodReferencePractice m = new MethodReferencePractice();
+        list.forEach(m ::hello);
+
+    }
+
+    public static void print(String s){
+        System.out.println(s.substring(0,4));
+    }
+
+
+    public void hello(String s){
+        System.out.println(s);
     }
 }
 

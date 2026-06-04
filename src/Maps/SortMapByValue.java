@@ -1,5 +1,6 @@
 package Maps;
 
+import javax.lang.model.type.IntersectionType;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -15,13 +16,34 @@ public class SortMapByValue {
         hm.put("Anshita", 7);
         hm.put("Vidharth", 1);
 
+
         System.out.println(hm);
+
+
+        Map<String, Integer>  map = hm.entrySet().stream().sorted(Map.Entry.comparingByValue()).collect(Collectors.toMap(Map.Entry::getKey,
+                Map.Entry :: getValue, ((i1,i2 )-> i1), LinkedHashMap::new ));
 
         Map<String,Integer> sortedMap =
                 hm.entrySet().stream().sorted(Map.Entry.comparingByValue())
                         .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,((integer, integer2) -> integer2), LinkedHashMap::new));
 
         System.out.println(sortedMap);
+
+
+
+
+
+
+
+
+
+
+
+
+        LinkedHashMap<String, Integer> l = hm.entrySet().stream().sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,((i1, i2) ->i1), LinkedHashMap::new));
+
+
 
     }
 }

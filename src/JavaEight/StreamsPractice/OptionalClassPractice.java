@@ -1,4 +1,4 @@
-package StreamsPractice;
+package JavaEight.StreamsPractice;
 
 import java.util.Optional;
 
@@ -17,7 +17,13 @@ public class OptionalClassPractice {
         //To avoid the abnormal termination, we use Optional class. In the following example, we are using Optional.
         // So, our program can execute without crashing.
         String[] str = new String[10];
-        Optional<String> o = Optional.ofNullable(str[5]);
+        Optional<String> o = Optional.ofNullable(str[5]).or(() -> Optional.of("h")); // or method is to provide a default if there is a null value.
+//        String o1 = Optional.ofNullable(str[5]).orElse("adahsk");  orElse method can result the default type of Optional. String in this case.
+
+
+
+
+
         if(o.isPresent()){
             System.out.println(str[5].toLowerCase());
         }
@@ -31,6 +37,8 @@ public class OptionalClassPractice {
         // If value is present, it returns an Optional otherwise returns an empty Optional
         Optional o1= Optional.of(str[5]);
         Optional check = o1.filter(s1->s1.equals("test"));
+
+
 
 
 //        In Selenium

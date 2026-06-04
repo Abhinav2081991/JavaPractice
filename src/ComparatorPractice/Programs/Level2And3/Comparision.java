@@ -27,7 +27,18 @@ public class Comparision  {
             System.out.println("Before: " + e.name + "," + e.salary + ", " + e.specificDate);
         }
 
+        list.sort((a, b) -> b.salary - a.salary ); // sorting based on Salary in descending order.
+
+        for (Employee e : list) {
+            System.out.println("After: " + e.name + "," + e.salary + ", " + e.specificDate);
+        }
+
+        for (Employee e : list) {
+            System.out.println("Before: " + e.name + "," + e.salary + ", " + e.specificDate);
+        }
+
         list.sort(Comparator.comparing(Employee::getSalary, Comparator.reverseOrder()).thenComparing(Employee::getName, Comparator.nullsFirst(String::compareTo)));
+
 
         for (Employee e : list) {
             System.out.println("After: " + e.name + "," + e.salary + ", " + e.specificDate);

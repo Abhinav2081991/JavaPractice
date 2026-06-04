@@ -1,4 +1,4 @@
-package StreamsPractice;
+package JavaEight.StreamsPractice;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -17,6 +17,20 @@ public class StreamPractice {
         a.add("abhinav4");
         a.add("ABhinav5");
         a.add("ABhinav6");
+
+        System.out.println( a.stream().anyMatch( s -> s.contains("AB")));
+
+
+        a.stream().forEach( s -> System.out.println(s));
+
+        Stream<String> stream = Stream.of("Abhinav", "Tiwari");
+
+        Stream<Integer> intergerStream = Stream.iterate( 1, x -> x*x).limit(10);
+        Stream.iterate(1, x -> x*x).limit(10);  // Unary Operater is with Iterate
+        // Starting point and Unary Operator.
+
+        Stream<String> stringStream = Stream.generate(() -> "Hello").limit(5);
+
 
 //        System.out.println(a.stream().filter(s-> s.startsWith("A")).count());
 
@@ -64,6 +78,8 @@ public class StreamPractice {
         nums.add(5);
         int sum = nums.parallelStream().mapToInt(s -> s).sum();   // Use parallel stream for concurrent processing
         System.out.println("Sum is ---------- :"+sum);
+
+
 
     }
 

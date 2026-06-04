@@ -13,4 +13,6 @@ public class AgeComparator implements Comparator<Student1> {
         }
         else return -1;
     }
+
+//    return s1.age-s2.age;  // for ascending order   abd s2.age-s1.age for descending order.
 }

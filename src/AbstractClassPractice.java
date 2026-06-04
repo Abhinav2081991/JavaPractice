@@ -39,8 +39,8 @@ class AbstractClassUSage extends AbstractClassPractice{
     }
 
     public static void main(String[] args) {
-        AbstractClassUSage a  =  new AbstractClassUSage();
-        a.test();
+        AbstractClassPractice a  =  new AbstractClassUSage();
+        a.testConcreteMethod();
         a.abstractMethod();
 
     }

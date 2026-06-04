@@ -13,11 +13,7 @@ public class Power {
         }
         System.out.println(result);
 
-
         int pow = (int) Math.pow(2, 5);
         System.out.println(pow);
     }
-
-
-
 }
